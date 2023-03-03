@@ -8,12 +8,27 @@
   --font-family-body: 'Montserrat', Arial, sans-serif;
 }
 
+/**
+ * Easy Dark mode
+ */
+body {
+  transition: filter 0.2s ease-in-out;
+}
+body.dark-mode {
+  filter: invert(100%);
+  img {
+    filter: invert(100%);
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   display: block;
   position: relative;
   height: 100vh;
@@ -21,15 +36,18 @@ html, body, #root {
   overflow: auto;
   font-family: var(--font-family-body);
   font-size: var(--font-size-base);
-  color: white;
-  background-color: black;
   -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   margin: 0;
 }
 
-header, h1, h2, h3, h4, h5, h6 {
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-family-header);
 }
-
