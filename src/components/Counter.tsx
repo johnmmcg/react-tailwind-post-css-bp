@@ -5,7 +5,7 @@ export default function Counter() {
 
   return (
     <div className="card-body gap-4">
-      <div className="card-title flex w-full flex-1 flex-row items-start justify-center">
+      <div className="card-title flex w-full flex-row items-start justify-center">
         <h2 className="flex-1">Count:</h2>
         <pre className="flex-1 text-center text-3xl">{count}</pre>
       </div>

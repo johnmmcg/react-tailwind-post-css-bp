@@ -5,12 +5,13 @@
   "private": true,
   "scripts": {
     "start": "npm run build:css && react-scripts start",
-    "dev": "npm run build:css && react-scripts start",
+    "dev": "npm run build:css && concurrently \"react-scripts start\" \"npm run serve\"",
     "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "postcss src/styles/tailwind.css -o dist/styles/main.css",
-    "postinstall": "node postinstall.js"
+    "postinstall": "node postinstall.js",
+    "serve": "json-server --watch db.js --routes routes.json"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.24.10",
@@ -35,6 +36,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "autoprefixer": "^10.4.13",
+    "concurrently": "^7.6.0",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
     "prettier": "^2.8.4",
@@ -58,5 +60,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
