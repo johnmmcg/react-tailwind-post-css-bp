@@ -86,7 +86,9 @@ export default function TodoList() {
                 key={todo.id}
               >
                 <button
-                  className={`btn flex-1 ${todo.completed && 'line-through'}`}
+                  className={`btn flex-1 ${
+                    todo.completed && 'line-through opacity-50'
+                  }`}
                   onClick={(e) =>
                     updateTodoMt.mutate({
                       ...todo,
@@ -97,39 +99,67 @@ export default function TodoList() {
                   {todo.text}
                 </button>
                 <button
-                  className="h-[30px] w-[30px] rounded-full border border-accent transition hover:bg-secondary hover:text-accent"
+                  className="m-0 flex h-[36px] w-[36px] items-center justify-center rounded-full border border-accent p-0 transition hover:bg-accent hover:text-base-100 "
                   onClick={(e) => deleteTodoMt.mutate({ id: todo.id })}
                 >
-                  x
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="h-4 w-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
                 </button>
               </li>
             ))}
           </ul>
-          <form
-            className="flex flex-row items-center justify-between gap-1"
-            onSubmit={(e) => {
-              e.preventDefault();
-              text?.length > 0 &&
-                postTodoMt.mutate({
-                  text,
-                  completed: false,
-                });
-            }}
-          >
-            <input
-              type="text"
-              placeholder="New Todo"
-              className="input-ghost input flex-1"
-              value={text}
-              onChange={(e) => setText(e.currentTarget.value)}
-            />
-            <button
-              type="submit"
-              className="h-[30px] w-[30px] rounded-full border border-accent transition hover:bg-secondary hover:text-accent"
+          <div className="flex w-full">
+            <form
+              className="flex w-full flex-row items-center justify-between gap-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                text?.length > 0 &&
+                  postTodoMt.mutate({
+                    text,
+                    completed: false,
+                  });
+              }}
             >
-              +
-            </button>
-          </form>
+              <input
+                type="text"
+                placeholder="New Todo"
+                className="input-ghost input m-0 min-w-0 border border-accent-focus p-0 pl-2 focus:outline-offset-0"
+                value={text}
+                onChange={(e) => setText(e.currentTarget.value)}
+              />
+              <button
+                type="submit"
+                className="flex h-[36px] min-w-[36px] items-center justify-center rounded-full border border-accent p-0 transition hover:bg-accent hover:text-base-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-4 w-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 4.5v15m7.5-7.5h-15"
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
         </div>
       )}
     </div>

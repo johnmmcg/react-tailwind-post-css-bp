@@ -1,4 +1,5 @@
-# Sandbox Boilerplate (React, TailwindCSS, PostCSS)
+# Sandbox Boilerplate 
+TypeScript, React, TailwindCSS, DaisyUI, PostCSS, JSON-server, @tanstack/react-query
 
 ## Getting Started with Create React App
 

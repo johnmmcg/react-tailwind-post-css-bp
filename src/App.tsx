@@ -1,32 +1,32 @@
 import ThemeSample from './components/ThemeSample';
 import Card from './components/Card';
 import Counter from './components/Counter';
-import ScreenSize from './components/ScreenSize';
-import ThemePicker from './components/ThemePicker';
+import WindowSize from './components/WindowSize';
 import TodoList from './components/TodoList';
+import Timer from './components/Timer';
 
 export default function App() {
   return (
-    <div className="h-screen w-screen bg-base-100">
-      <div className="flex h-full w-full flex-col items-center justify-center gap-4">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3">
-          <Card>
-            <ThemePicker />
-          </Card>
-          <Card>
-            <ThemeSample />
-          </Card>
-          <Card>
-            <ScreenSize />
-          </Card>
-          <Card>
-            <Counter />
-          </Card>
-          <Card>
-            <TodoList />
-          </Card>
-        </div>
+    <div className="flex h-screen w-screen flex-col items-center justify-start bg-base-100 p-4">
+      <header>
+        <h1 className="text-3xl">John's Sandbox</h1>
+      </header>
+      <div className="grid h-auto w-full max-w-4xl grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3">
+        <Card>
+          <WindowSize />
+        </Card>
+        <Card>
+          <ThemeSample />
+        </Card>
+        <Card>
+          <Counter />
+        </Card>
+        <Card>
+          <Timer />
+        </Card>
+        <Card>
+          <TodoList />
+        </Card>
       </div>
     </div>
   );
