@@ -3,6 +3,7 @@ import Card from './components/Card';
 import Counter from './components/Counter';
 import WindowSize from './components/WindowSize';
 import TodoList from './components/TodoList';
+import Stopwatch from './components/Stopwatch';
 import Timer from './components/Timer';
 
 export default function App() {
@@ -23,6 +24,9 @@ export default function App() {
         </Card>
         <Card>
           <Timer />
+        </Card>
+        <Card>
+          <Stopwatch />
         </Card>
         <Card>
           <TodoList />

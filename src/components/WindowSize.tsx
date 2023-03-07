@@ -4,9 +4,9 @@ export default function WindowSize() {
   const { width, height } = useWindowSize();
 
   return (
-    <div className="card-body">
-      <h2 className="card-title">Window: </h2>
-      <div className="flex h-full flex-col items-center justify-center gap-2 text-center">
+    <div className="flex h-full flex-col gap-4 p-4">
+      <h2 className="card-title text-2xl">Window: </h2>
+      <div className="flex h-full flex-col items-center justify-start gap-2 text-center">
         <div className="stats shadow">
           <div className="stat">
             <p className="stat-tile">Width:</p>
